@@ -1,0 +1,16 @@
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather.cs\Weather.cs\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather.cs\Weather.cs\obj\Debug\Weather.cs.Form1.resources
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather.cs\Weather.cs\obj\Debug\Weather.cs.Properties.Resources.resources
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather.cs\Weather.cs\obj\Debug\Weather.cs.csproj.GenerateResource.Cache
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather.cs\Weather.cs\bin\Debug\Weather.cs.exe
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather.cs\Weather.cs\bin\Debug\Weather.cs.pdb
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather.cs\Weather.cs\obj\Debug\Weather.cs.exe
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather.cs\Weather.cs\obj\Debug\Weather.cs.pdb
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather\Weather.cs\obj\Debug\Weather.cs.exe
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather\Weather.cs\obj\Debug\Weather.cs.pdb
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather\Weather.cs\bin\Debug\Weather.cs.exe
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather\Weather.cs\bin\Debug\Weather.cs.pdb
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather\Weather.cs\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather\Weather.cs\obj\Debug\Weather.cs.Form1.resources
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather\Weather.cs\obj\Debug\Weather.cs.Properties.Resources.resources
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Weather\Weather.cs\obj\Debug\Weather.cs.csproj.GenerateResource.Cache
