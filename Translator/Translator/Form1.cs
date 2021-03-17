@@ -13,8 +13,6 @@ namespace Translator
 {
     public partial class Form1 : Form
     {
-        string flang = "";
-        string tlang = "";
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +23,8 @@ namespace Translator
         //파파고 번역 함수
         public string translate()
         {
-            confirmLang();
+            string flang = confirmLang(cb_from);
+            string tlang = confirmLang(cb_To);
             string url = "https://openapi.naver.com/v1/papago/n2mt";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Headers.Add("X-Naver-Client-Id", "u7rbm1QXKT4xnFi_vQ4H");
@@ -52,99 +51,73 @@ namespace Translator
         }
         
         // 선택한 언어 확인
-        public void confirmLang()
+        public string confirmLang(ComboBox cb)
         {
-            switch (cb_from.Text)
+            string text = cb.Text;
+            switch (text)
             {
                 case "한국어":
-                    flang = "ko";
+                    text = "ko";
                     break;
                 case "영어":
-                    flang = "en";
+                    text = "en";
                     break;
                 case "일본어":
-                    flang = "ja";
+                    text = "ja";
                     break;
                 case "중국어 간체":
-                    flang = "zh-CN";
+                    text = "zh-CN";
                     break;
                 case "중국어 번체":
-                    flang = "zh-TW";
+                    text = "zh-TW";
                     break;
                 case "베트남어":
-                    flang = "vi";
+                    text = "vi";
                     break;
                 case "인도네시아어":
-                    flang = "id";
+                    text = "id";
                     break;
                 case "태국어":
-                    flang = "th";
+                    text = "th";
                     break;
                 case "독일어":
-                    flang = "de";
+                    text = "de";
                     break;
                 case "러시아어":
-                    flang = "ru";
+                    text = "ru";
                     break;
                 case "스페인어":
-                    flang = "es";
+                    text = "es";
                     break;
                 case "이탈리아어":
-                    flang = "it";
+                    text = "it";
                     break;
                 case "프랑스어":
-                    flang = "fr";
+                    text = "fr";
                     break;
             }
-            switch (cb_To.Text)
-            {
-                case "한국어":
-                    tlang = "ko";
-                    break;
-                case "영어":
-                    tlang = "en";
-                    break;
-                case "일본어":
-                    tlang = "ja";
-                    break;
-                case "중국어 간체":
-                    tlang = "zh-CN";
-                    break;
-                case "중국어 번체":
-                    tlang = "zh-TW";
-                    break;
-                case "베트남어":
-                    tlang = "vi";
-                    break;
-                case "인도네시아어":
-                    tlang = "id";
-                    break;
-                case "태국어":
-                    tlang = "th";
-                    break;
-                case "독일어":
-                    tlang = "de";
-                    break;
-                case "러시아어":
-                    tlang = "ru";
-                    break;
-                case "스페인어":
-                    tlang = "es";
-                    break;
-                case "이탈리아어":
-                    tlang = "it";
-                    break;
-                case "프랑스어":
-                    tlang = "fr";
-                    break;
-            }
+            return text;
         }
 
         // 번역하기 버튼 클릭 이벤트
         private void btn_Translate_Click(object sender, EventArgs e)
         {
-            tb_ToText.Text = getTranslatedText();
-            MessageBox.Show(getLanguageCode());
+            if (cb_from.Text.Equals(cb_To.Text))
+            {
+                MessageBox.Show("번역할 언어설정을 서로 다르게 해주세요");
+            }
+            else if(!String.IsNullOrEmpty(tb_FromText.Text))
+            {
+                try
+                {
+                    tb_ToText.Text = getTranslatedText();
+                }
+                catch (System.Net.WebException)
+                {
+                    MessageBox.Show(cb_from.Text + "에서 " + cb_To.Text + "로의 번역은 지원하지 않습니다.", "ERROR" );
+                }
+                
+            }
         }
         
         // 번역함수의 반환값에서 번역한 내용만 추출
@@ -188,15 +161,82 @@ namespace Translator
         // 언어감지 함수의 반환값에서 언어코드만 추출
         public string getLanguageCode()
         {
-            string text = sensingLanguage();
-            JObject obj = JObject.Parse(text);
-            string result = obj["langCode"].ToString();
-
+            string result = null;
+            if (!String.IsNullOrEmpty(tb_FromText.Text))
+            {
+                string text = sensingLanguage();
+                JObject obj = JObject.Parse(text);
+                result = obj["langCode"].ToString();
+            }
             return result;
         }
 
+        // 텍스트 변경 시 언어감지
         private void tb_FromText_TextChanged(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(tb_FromText.Text))
+            {
+                cb_from.Text = "한국어";
+                tb_ToText.Text = null;
+            }
+            else
+            {
+                string text = codeToText();
+                cb_from.Text = text;
+            }
+            
+        }
+
+        // 언어코드를 언어로 변환
+        public string codeToText()
+        {
+            string text = getLanguageCode();
+            switch (text)
+            {
+                case "ko":
+                    text = "한국어";
+                    break;
+                case "ja":
+                    text = "일본어";
+                    break;
+                case "zh-cn":
+                    text = "중국어 간체";
+                    break;
+                case "zh-tw":
+                    text = "중국어 번체";
+                    break;
+                case "en":
+                    text = "영어";
+                    break;
+                case "es":
+                    text = "스페인어";
+                    break;
+                case "fr":
+                    text = "프랑스어";
+                    break;
+                case "de":
+                    text = "독일어";
+                    break;
+                case "vi":
+                    text = "베트남어";
+                    break;
+                case "id":
+                    text = "인도네시아어";
+                    break;
+                case "th":
+                    text = "태국어";
+                    break;
+                case "ru":
+                    text = "러시아어";
+                    break;
+                case "it":
+                    text = "이탈리아어";
+                    break;
+                default:
+                    text = "알수없음";
+                    break;
+            }
+            return text;
 
         }
     }
