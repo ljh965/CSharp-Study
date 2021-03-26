@@ -1,0 +1,15 @@
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\obj\Debug\Library.IndexForm.resources
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\obj\Debug\Library.Properties.Resources.resources
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\obj\Debug\Library.csproj.GenerateResource.Cache
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\bin\Debug\Library.exe
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\bin\Debug\Library.pdb
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\obj\Debug\Library.exe
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\obj\Debug\Library.pdb
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\bin\Debug\Oracle.DataAccess.dll
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\obj\Debug\Library.AddLibraryForm.resources
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\bin\Debug\Library.exe.config
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\obj\Debug\Library.LoginForm.resources
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\obj\Debug\Library.LibraryForm.resources
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\obj\Debug\Library.AddBook.resources
+C:\Users\PC\Documents\Visual Studio 2005\Projects\Library\Library\obj\Debug\Library.ShowBook.resources
